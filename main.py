@@ -75,19 +75,19 @@ def print_imgs(li):
         if n==6:
             n= 1
         if n==1:
-            c1.image('imgs\s'+str(i)+'.jpg')
+            c1.image('imgs/s'+str(i)+'.jpg')
             c1.markdown('Probability : '+str(vals[n-1]))
         elif n==2:
-            c2.image('imgs\s'+str(i)+'.jpg')
+            c2.image('imgs/s'+str(i)+'.jpg')
             c2.markdown('Probability : '+str(vals[n-1]))
         elif n==3:
-            c3.image('imgs\s'+str(i)+'.jpg')
+            c3.image('imgs/s'+str(i)+'.jpg')
             c3.markdown('Probability : '+str(vals[n-1]))
         elif n==4:
-            c4.image('imgs\s'+str(i)+'.jpg')
+            c4.image('imgs/s'+str(i)+'.jpg')
             c4.markdown('Probability : '+str(vals[n-1]))
         elif n==5:
-            c5.image('imgs\s'+str(i)+'.jpg')
+            c5.image('imgs/s'+str(i)+'.jpg')
             c5.markdown('Probability : '+str(vals[n-1]))
         n += 1
 
