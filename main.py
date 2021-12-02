@@ -205,7 +205,7 @@ def word_freq(text):
 
 #################################### MAIN ########################################
 with body:
-    st.image('imgs\sdg.jpg')
+    st.image('imgs/sdg.jpg')
 
     #using text_area
     input_text = st.text_area('Type or paste a sample doucment here.')
