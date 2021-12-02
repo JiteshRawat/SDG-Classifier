@@ -8,8 +8,8 @@ custom_params = {"axes.spines.right": False, "axes.spines.top": False}
 sns.set_theme(style="white", palette=None, rc = custom_params)
 import plotly.express as px
 import nltk
-#nltk.download('stopwords')
-#nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('punkt')
 from wordcloud import WordCloud
 from nltk.probability import FreqDist
 from nltk.tokenize import word_tokenize 
