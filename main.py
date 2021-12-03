@@ -163,7 +163,7 @@ def plot_predictors(sample):
         },
         #title = 'Key Predictor words in given document'
     )
-    fig.update_traces(width=1)
+    fig.update_traces(width= 0.5)
     fig.for_each_trace(lambda x: x.update(hovertemplate = template))
     fig.for_each_trace(lambda x: x.update(marker_color = colors.pop(0)))
     fig.for_each_annotation(lambda x: x.update(text = 'SDG : '+'<br>'.join(wrap(sdg_names[int(x.text.split("=")[-1])], 30))))
