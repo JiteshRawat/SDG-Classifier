@@ -169,7 +169,7 @@ def plot_predictors(sample):
     fig.for_each_annotation(lambda x: x.update(text = 'SDG : '+'<br>'.join(wrap(sdg_names[int(x.text.split("=")[-1])], 30))))
     fig.update_yaxes(matches = None, showticklabels = True)
 
-    st.plotly_chart(fig, use_container_width= False)
+    st.plotly_chart(fig, use_container_width= True)
 
  
 
