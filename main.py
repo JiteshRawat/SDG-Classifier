@@ -156,7 +156,7 @@ def plot_predictors(sample):
         facet_col_wrap = 3,
         facet_col_spacing = .15,
         orientation = 'h',
-        height = 700,
+        height = 600,
         labels = {
             'coef': 'Coefficient',
             'predictors': ''
