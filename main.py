@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config(layout="wide", page_title= 'SDG Classifier', page_icon = 'earth.ico')
+st.set_page_config(page_title= 'SDG Classifier', page_icon = 'earth.ico')
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -169,7 +169,7 @@ def plot_predictors(sample):
     fig.for_each_annotation(lambda x: x.update(text = 'SDG : '+'<br>'.join(wrap(sdg_names[int(x.text.split("=")[-1])], 30))))
     fig.update_yaxes(matches = None, showticklabels = True)
 
-    st.plotly_chart(fig, use_container_width= True)
+    st.plotly_chart(fig, use_container_width= False)
 
  
 
