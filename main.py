@@ -142,37 +142,37 @@ def plot_predictors(sample):
         if word in sample:
             predictors.append((df_lambda['sdg'][i], word, df_lambda['coef'][i]))
 
-    st.text(predictors) 
-    '''df_pred = pd.DataFrame(predictors, columns = ['sdg', 'predictors', 'coef'])
-    df_pred.sort_values(['sdg', 'coef'], ignore_index = True, inplace = True)
-    colors = px.colors.qualitative.Dark24[:15]
-    template = 'SDG: %{customdata}<br>Predictor: %{y}<br>Coefficient: %{x:.2f}'
-    
-    fig = px.bar(
-        data_frame = df_pred,
-        x = 'coef',
-        y = 'predictors',
-        custom_data = ['sdg'],
-        facet_col = 'sdg',
-        facet_col_wrap = 3,
-        facet_col_spacing = .15,
-        orientation = 'h',
-        height = 600,
-        labels = {
-            'coef': 'Coefficient',
-            'predictors': ''
-        },
-        #title = 'Key Predictor words in given document'
-    )
-    fig.update_traces(width= 0.5)
-    fig.for_each_trace(lambda x: x.update(hovertemplate = template))
-    fig.for_each_trace(lambda x: x.update(marker_color = colors.pop(0)))
-    fig.for_each_annotation(lambda x: x.update(text = 'SDG : '+'<br>'.join(wrap(sdg_names[int(x.text.split("=")[-1])], 30))))
-    fig.update_yaxes(matches = None, showticklabels = True)
+    if len(predictors): 
+        df_pred = pd.DataFrame(predictors, columns = ['sdg', 'predictors', 'coef'])
+        df_pred.sort_values(['sdg', 'coef'], ignore_index = True, inplace = True)
+        colors = px.colors.qualitative.Dark24[:15]
+        template = 'SDG: %{customdata}<br>Predictor: %{y}<br>Coefficient: %{x:.2f}'
 
-    st.plotly_chart(fig, use_container_width= True)'''
+        fig = px.bar(
+            data_frame = df_pred,
+            x = 'coef',
+            y = 'predictors',
+            custom_data = ['sdg'],
+            facet_col = 'sdg',
+            facet_col_wrap = 3,
+            facet_col_spacing = .15,
+            orientation = 'h',
+            height = 600,
+            labels = {
+                'coef': 'Coefficient',
+                'predictors': ''
+            },
+            #title = 'Key Predictor words in given document'
+        )
+        fig.update_traces(width= 0.5)
+        fig.for_each_trace(lambda x: x.update(hovertemplate = template))
+        fig.for_each_trace(lambda x: x.update(marker_color = colors.pop(0)))
+        fig.for_each_annotation(lambda x: x.update(text = 'SDG : '+'<br>'.join(wrap(sdg_names[int(x.text.split("=")[-1])], 30))))
+        fig.update_yaxes(matches = None, showticklabels = True)
 
- 
+        st.plotly_chart(fig, use_container_width= True)
+    else:
+        st.text('No predictors!)
 
 def plot_prob(pred):
     fig, ax= plt.subplots()
