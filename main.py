@@ -172,7 +172,7 @@ def plot_predictors(sample):
 
         st.plotly_chart(fig, use_container_width= True)
     else:
-        st.text('No predictors!)
+        st.text('No predictors!')
 
 def plot_prob(pred):
     fig, ax= plt.subplots()
