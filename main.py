@@ -142,11 +142,12 @@ def plot_predictors(sample):
         if word in sample:
             predictors.append((df_lambda['sdg'][i], word, df_lambda['coef'][i]))
 
-    df_pred = pd.DataFrame(predictors, columns = ['sdg', 'predictors', 'coef'])
+    st.text(predictors) 
+    '''df_pred = pd.DataFrame(predictors, columns = ['sdg', 'predictors', 'coef'])
     df_pred.sort_values(['sdg', 'coef'], ignore_index = True, inplace = True)
     colors = px.colors.qualitative.Dark24[:15]
     template = 'SDG: %{customdata}<br>Predictor: %{y}<br>Coefficient: %{x:.2f}'
-
+    
     fig = px.bar(
         data_frame = df_pred,
         x = 'coef',
@@ -169,7 +170,7 @@ def plot_predictors(sample):
     fig.for_each_annotation(lambda x: x.update(text = 'SDG : '+'<br>'.join(wrap(sdg_names[int(x.text.split("=")[-1])], 30))))
     fig.update_yaxes(matches = None, showticklabels = True)
 
-    st.plotly_chart(fig, use_container_width= True)
+    st.plotly_chart(fig, use_container_width= True)'''
 
  
 
